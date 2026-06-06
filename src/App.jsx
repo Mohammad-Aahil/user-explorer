@@ -1,23 +1,14 @@
-import React, { useState, useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
+import React, { useState, useMemo } from "react";
+import useUsers from "./hooks/useUsers";
+import UserList from "./components/UserList";
 
 const App = () => {
   // For Search Input used for Filtering
   const [search, setSearch] = useState("");
 
-  // Define UseQuery and using async Fn
-  const { data, isLoading, error } = useQuery({
-    queryKey: ["users"],
-    queryFn: async () => {
-      const res = await fetch("https://jsonplaceholder.typicode.com/users");
-      if (!res.ok) {
-        throw new Error("Failed to fetch");
-      }
-
-      // console.log(data);
-      return res.json();
-    },
-  });
+  // gets the data from useQuery
+  const { data, isLoading, error } = useUsers();
 
   // Filtering Users
   const filteredUsers = useMemo(() => {
@@ -38,8 +29,10 @@ const App = () => {
         placeholder="Type users..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
+        className="border p-2 rounded w-full mb-4"
       />
-      {filteredUsers.map((user) => (
+      <UserList users={filteredUsers} />
+      {/* {filteredUsers.map((user) => (
         <div
           key={user.id}
           style={{ border: "1px solid gray", margin: "10px", padding: "5px" }}
@@ -49,7 +42,7 @@ const App = () => {
           </p>
           <p> {user.email} </p> <br />
         </div>
-      ))}
+      ))} */}
     </div>
   );
 };
