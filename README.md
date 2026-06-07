@@ -1,16 +1,24 @@
-# React + Vite
+Description
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React application that fetches user data from an external API and provides search and filtering functionality. This project demonstrates API integration, state management, and responsive UI development.
 
-Currently, two official plugins are available:
+Live Demo
+🔗 Live: https://mohammad-aahil.github.io/user-explorer
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Source Code
+💻 GitHub: https://github.com/Mohammad-Aahil/user-explorer
 
-## React Compiler
+Features
+* Real-time search functionality
+* User filtering
+* Loading and error states
+* Responsive design
+* Clean and reusable components
+* Fetch users from API
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Technologies Used
+* React.js
+* JavaScript (ES6+)
+* REST API
+* CSS
+* Vite
